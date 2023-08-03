@@ -47,3 +47,5 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 		echo -ne "${GREEN}The $dir doesn't exist${NC}\r"
 	fi
 done
+
+echo -e "Everithing done!! Bye bye!!"
