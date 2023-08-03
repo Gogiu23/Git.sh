@@ -23,7 +23,7 @@ function check_git_status() {
 
   # Comprobar si hay cambios sin hacer commit ni push
   if [[ -n "$status" ]]; then
-	  echo -e "${CYAN}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
+	  echo -e "${RED}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
 	  echo -e "${CYAN}Do you want to stage and push theese unstages changes?\n${NC}"
 	  echo -e "${YELLOW}(type yes or no or diff in case you wanna know the diffs)${NC} "
 	  read answer
@@ -36,7 +36,7 @@ function check_git_status() {
 	  if [[ "$answer" == "yes" ]]; then
 		  echo -e "${CYAN}Making commits...\n${NC}"
 		  git add .
-		  echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
+		  echo -e "${BLUE}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
 		  echo -e "${YELLOW}(Write your comments or type no)${GREEN} " 
 		  read comment
 		  if [[ "$comment" == "no" ]]; then
