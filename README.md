@@ -30,8 +30,16 @@ chmod 774 Dependencies/*.sh
 4. Execute the main archive Git.sh and done.
 
 ## Use
-
+Just executing the script as
+```bash
+./Git.sh
+```
+It will start the program to run
 ### First part
+At the beginning it will ask where to save the log file, which it will be the records of your session.
+
+![](https://github.com/Gogiu23/Git.sh/blob/main/images.log.png)
+
 ### Authomatic Committing
 ### Manual Committing
 
