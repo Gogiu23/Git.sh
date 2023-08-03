@@ -50,7 +50,7 @@ function check_git_status() {
   }
 
 # Bucle para recorrer las carpetas
-for dir in $(find . -type d -name '.git' -prune); do
+for dir in $(find ~/. -type d -name '.git' -prune); do
 	# Entrar al directorio del repositorio de Git
 	pushd "$dir/.." > /dev/null
 
