@@ -7,5 +7,7 @@ function check_git_status() {
 	status=$(git status --porcelain)
 	if [[ "$starting" == "2" ]]; then
 		manual_commit
+	else
+		automatic_commit
 	fi
 }
