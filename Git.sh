@@ -14,6 +14,7 @@ function check_git_status() {
 		echo -e "Making commits...\n"
 		git add .
 		git commit -m "$(date)"
+		git push
 	fi
   fi
 }
