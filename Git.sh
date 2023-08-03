@@ -44,7 +44,7 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 		echo -e "${RED}You don't have permission to get inside $dir\n${NC}"
 		fi
 	else
-		echo -ne "${GREEN}The $dir doesn't exist${NC}\r"
+		echo -ne "${GREEN}The $dir doesn't exist${NC}" > /dev/null
 	fi
 done
 
