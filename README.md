@@ -38,11 +38,26 @@ It will start the program to run
 ### First part
 At the beginning it will ask where to save the log file, which it will be the records of your session.
 
+
 <h1 align="center>
+
 
 ![](https://github.com/Gogiu23/Git.sh/blob/main/Images/log.png)
 
+
 </h1>
+
+And then the program it will ask to choose between **Authomatic** or **Manually** commits.
+
+
+<h1 align="center>
+
+
+![](https://github.com/Gogiu23/Git.sh/blob/main/Images/pick.png)
+
+
+</h1>
+
 
 ### Authomatic Committing
 ### Manual Committing
