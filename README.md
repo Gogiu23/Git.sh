@@ -40,6 +40,8 @@ At the beginning it will ask where to save the log file, which it will be the re
 
 ![](https://github.com/Gogiu23/Git.sh/blob/main/images/log.png)
 
+<img src="https://github.com/Gogiu23/Git.sh/blob/main/images/log.png" width="1000" height="300">
+
 ### Authomatic Committing
 ### Manual Committing
 
