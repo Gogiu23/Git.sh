@@ -31,13 +31,13 @@ function check_git_status() {
 	  if [[ "$answer" == "diff" ]]; then
 		  git diff
 	  fi
-	  echo -e "${YELLOW}Still wanna stage and push? (yes or no) " 
+	  echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${NC}" 
 	  read answer
 	  if [[ "$answer" == "yes" ]]; then
 		  echo -e "${CYAN}Making commits...\n${NC}"
 		  git add .
 		  echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
-		  echo -e "${YELLOW}(Write your comments or type no) " 
+		  echo -e "${YELLOW}(Write your comments or type no)${GREEN} " 
 		  read comment
 		  if [[ "$comment" == "no" ]]; then
 			  comment=$(date)
