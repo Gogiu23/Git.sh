@@ -1,5 +1,21 @@
 #!/bin/bash
 
+#COLORES
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[0;37m'
+NC='\033[0m' # No Color
+
+# Estilos
+BOLD='\033[1m'
+UNDERLINE='\033[4m'
+BLINK='\033[5m'
+INVERT='\033[7m'
+
 # Función para verificar si hay cambios sin hacer push en un repositorio de Git
 function check_git_status() {
 	# Obtener el estado del repositorio de Git
@@ -7,19 +23,22 @@ function check_git_status() {
 
   # Comprobar si hay cambios sin hacer commit ni push
   if [[ -n "$status" ]]; then
-	  echo -e "Hay cambios sin hacer commit ni push en: $(pwd)\n"
-	  echo -e "Do you want to stage and push theese unstages changes?\n"
-	  read -p "(type yes or no or diff in case you wanna know the diffs) " answer
+	  echo -e "${CYAN}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
+	  echo -e "${CYAN}Do you want to stage and push theese unstages changes?\n${NC}"
+	  echo -e "${YELLOW}(type yes or no or diff in case you wanna know the diffs)${NC} "
+	  read answer
 
 	  if [[ "$answer" == "diff" ]]; then
 		  git diff
 	  fi
-	  read -p "Still wanna stage and push? (yes or no) " answer
+	  echo -e "${YELLOW}Still wanna stage and push? (yes or no) " 
+	  read answer
 	  if [[ "$answer" == "yes" ]]; then
-		  echo -e "Making commits...\n"
+		  echo -e "${CYAN}Making commits...\n${NC}"
 		  git add .
-		  echo -e "Wanna add something as commentary to your commit? (if not the date would be print instead)\n" 
-		  read -p "(Write your comments or type no) " comment
+		  echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
+		  echo -e "${YELLOW}(Write your comments or type no) " 
+		  read comment
 		  if [[ "$comment" == "no" ]]; then
 			  comment=$(date)
 			  echo "$comment"
