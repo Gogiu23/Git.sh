@@ -26,6 +26,7 @@ function manual_commit() {
 			fi
 			git commit -m "$comment"
 			git push
+			echo -e "${NC}"
 			fi
 		fi
 
