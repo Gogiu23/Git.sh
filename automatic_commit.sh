@@ -6,14 +6,14 @@ function automatic_commit() {
 	if [[ -n "$status" ]]; then
 		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
 		echo -e "Here the direction you are making changes\n" >> $traces
-		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 		echo -e "$PWD\n" >> $traces
 		git diff >> $traces
-		echo -e
+		echo -e >> $traces
 		git add . >> $traces
-		echo -e
+		echo -e >> $traces
 		git commit -m "$comment" >> $traces
-		echo -e
+		echo -e >> $traces
 		git push >> $traces
 		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 	fi
