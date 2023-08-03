@@ -25,13 +25,13 @@ function check_git_status() {
   if [[ -n "$status" ]]; then
 	  echo -e "${RED}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
 	  echo -e "${CYAN}Do you want to stage and push theese unstages changes?\n${NC}"
-	  echo -e "${YELLOW}(type yes or no or diff in case you wanna know the diffs)${NC} "
+	  echo -e "${YELLOW}(type ${BOLD}${RED}yes${NC}${YELLOW} or ${BOLD}${RED}no${NC}${YELLOW} or ${BOLD}${RED}diff${NC}${YELLOW} in case you wanna know the diffs)${MAGENTA} "
 	  read answer
 
 	  if [[ "$answer" == "diff" ]]; then
 		  git diff
 	  fi
-	  echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${NC}" 
+	  echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}" 
 	  read answer
 	  if [[ "$answer" == "yes" ]]; then
 		  echo -e "${CYAN}Making commits...\n${NC}"
