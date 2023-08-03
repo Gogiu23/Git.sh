@@ -15,6 +15,6 @@ function automatic_commit() {
 		git commit -m "$comment" >> $traces
 		echo -e "\n" >> $traces
 		git push >> $traces
-		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 	fi
 }
