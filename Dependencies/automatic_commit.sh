@@ -2,9 +2,15 @@
 
 function automatic_commit() {
 	comment=$(date)
-	echo -e "${RED}Proceeding with automatic_commit.${GREEN}\n"
+	echo -ne "${RED}Proceeding with automatic_commit.${GREEN}\r"
 	if [[ -n "$status" ]]; then
-		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+		if [[ "$counter" == "0" ]]; then
+
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+		else
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		fi
+
 		echo -e "Here the direction you are making changes\n" >> $traces
 		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 		echo -e "$PWD\n" >> $traces

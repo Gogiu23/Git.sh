@@ -32,7 +32,7 @@ function manual_commit() {
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 			git add . >> $traces
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
-			echo -e "${BLUE}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
+			echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
 			echo -e "${YELLOW}(Write your comments or type no)${GREEN} " 
 			read comment
 			if [[ "$comment" == "no" ]]; then

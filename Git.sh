@@ -48,4 +48,4 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 	fi
 done
 
-echo -e "Everithing done!! Bye bye!!"
+echo -e "${YELLOW}Everithing done!! Bye bye!!"
