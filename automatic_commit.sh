@@ -4,10 +4,17 @@ function automatic_commit() {
 	comment=$(date)
 	echo -e "${RED}Proceeding with automatic_commit.${GREEN}\n"
 	if [[ -n "$status" ]]; then
-		echo -e "Here the direction you are making changes" > $traces
-		echo -e "$PWD" >> $traces
+		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+		echo -e "Here the direction you are making changes\n" >> $traces
+		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "$PWD\n" >> $traces
+		git diff >> $traces
+		echo -e
 		git add . >> $traces
+		echo -e
 		git commit -m "$comment" >> $traces
+		echo -e
 		git push >> $traces
+		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 	fi
 }
