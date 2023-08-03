@@ -14,9 +14,10 @@ function manual_commit() {
 
 		if [[ "$answer" == "diff" ]]; then
 			git diff >> $traces
+			echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}" 
+		elif [[ "$answer" == "no" ]]; then
+			return 1
 		fi
-		echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}" 
-		read answer
 		if [[ "$answer" == "yes" ]]; then
 			echo -e "${CYAN}Making commits...\n${NC}"
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
