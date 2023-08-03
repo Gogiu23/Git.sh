@@ -5,7 +5,7 @@ function automatic_commit() {
 	echo -e "${RED}Proceeding with automatic_commit.${GREEN}\n"
 	if [[ -n "$status" ]]; then
 		echo -e "Here the direction you are making changes" > $traces
-		echo -e "$PWD" > $traces
+		echo -e "$PWD" >> $traces
 		git add . > $traces
 		git commit -m "$comment" >> $traces
 		git push >> $traces
