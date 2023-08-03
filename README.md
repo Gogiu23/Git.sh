@@ -54,8 +54,21 @@ And then the program it will ask to choose between **Authomatic** or **Manually*
 
 </h1>
 
-
 ### Authomatic Committing
+Here the programm will search in every folder from your `$HOME` all the repository that changes from the last commit wasn't staged and commits properly.
+
+> **Pay attention that all the commits will be pushed without ask the user any confirmation** 
+
 ### Manual Committing
 
+Manual committing will ask at the user to see the:
 
+- `git diff`
+- stage the changes with `git add`
+- commits the changes with `git commit`
+
+    - Here the programm will ask about the message in the commit. If ignored, the date will be the message in the
+    commit
+- And finally `git push`
+
+> **The programm will iterate every folder untill there will be none changes unstaged**

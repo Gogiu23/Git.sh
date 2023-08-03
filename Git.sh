@@ -25,22 +25,25 @@ source Dependencies/log.sh
 welcome
 #exit
 
+counter=0
+
 # Bucle para recorrer las carpetas
-for dir in $(sudo find ~/. -type d -name '.git' -prune); do
+for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
 	if [[ -d "$dir" ]]; then
 		if [[ -r "$dir" ]] && [[ -x "$dir" ]]; then
-			# Entrar al directorio del repositorio de Git
-			pushd "$dir/.." > /dev/null
+   		# Entrar al directorio del repositorio de Git
+   		pushd "$dir/.." > /dev/null
+#		clear
 
-		# Verificar el estado del repositorio
-		check_git_status
+   	# Verificar el estado del repositorio
+   	check_git_status
 
-		# Regresar al directorio anterior
-		popd > /dev/null
+   	# Regresar al directorio anterior
+   	popd > /dev/null
 	else
 		echo -e "${RED}You don't have permission to get inside $dir\n${NC}"
 		fi
 	else
-		echo -e "${GREEN}The $dir doesn't exist${NC}\n"
+		echo -ne "${GREEN}The $dir doesn't exist${NC}\r"
 	fi
 done

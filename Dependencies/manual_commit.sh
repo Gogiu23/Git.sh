@@ -5,16 +5,25 @@ function manual_commit() {
 	# Comprobar si hay cambios sin hacer commit ni push
 	if [[ -n "$status" ]]; then
 		echo -e "${RED}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
+
 		echo -e "${CYAN}Do you want to stage and push theese unstages changes?\n${NC}"
+
 		echo -e "${YELLOW}(type ${BOLD}${RED}yes${NC}${YELLOW} or ${BOLD}${RED}no${NC}${YELLOW} or ${BOLD}${RED}diff${NC}${YELLOW} in case you wanna know the diffs)${MAGENTA} "
+
 		read answer
-		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+
+		if [[ "$counter" > "0" ]]; then
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+		else
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		fi
 		echo -e "All the changes manually should be recorded down here" >> $traces
 		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 
 		if [[ "$answer" == "diff" ]]; then
 			git diff >> $traces
 			echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}" 
+			read answer
 		elif [[ "$answer" == "no" ]]; then
 			return 1
 		fi
@@ -38,5 +47,5 @@ function manual_commit() {
 			echo -e "${NC}"
 			fi
 		fi
-
+		((counter++))
 	}
