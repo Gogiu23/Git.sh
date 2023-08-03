@@ -16,11 +16,11 @@ UNDERLINE='\033[4m'
 BLINK='\033[5m'
 INVERT='\033[7m'
 
-source welcome.sh
-source check_git_status.sh
-source manual_commit.sh
-source automatic_commit.sh
-source log.sh
+source Dependencies/welcome.sh
+source Dependencies/check_git_status.sh
+source Dependencies/manual_commit.sh
+source Dependencies/automatic_commit.sh
+source Dependencies/log.sh
 
 welcome
 #exit
