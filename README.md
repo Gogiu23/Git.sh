@@ -38,7 +38,7 @@ It will start the program to run
 ### First part
 At the beginning it will ask where to save the log file, which it will be the records of your session.
 
-![](https://github.com/Gogiu23/Git.sh/blob/main/images.log.png)
+![](https://github.com/Gogiu23/Git.sh/blob/main/images/log.png)
 
 ### Authomatic Committing
 ### Manual Committing
