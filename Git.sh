@@ -13,7 +13,11 @@ function check_git_status() {
 	if [ "$answer" == "yes" ]; then
 		echo -e "Making commits...\n"
 		git add .
-		git commit -m "$(date)"
+		read -p "Wanna add something as commentary to your commit? (if not the date would be print instead) (type yes or no) " comment
+		if [ "$comment" == "no" ]; then
+			comment = $(date)
+		fi
+		git commit -m "$comment"
 		git push
 	fi
   fi
