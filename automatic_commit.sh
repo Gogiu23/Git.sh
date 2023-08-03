@@ -13,7 +13,7 @@ function automatic_commit() {
 		git add . >> $traces
 		echo -e >> $traces
 		git commit -m "$comment" >> $traces
-		echo -e >> $traces
+		echo -e "\n" >> $traces
 		git push >> $traces
 		echo "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 	fi
