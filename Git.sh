@@ -15,7 +15,7 @@ function check_git_status() {
 		git add .
 		read -p "Wanna add something as commentary to your commit? (if not the date would be print instead) (type yes or no) " comment
 		if [ "$comment" == "no" ]; then
-			comment = $(date)
+			$comment = $(date)
 			echo "$comment"
 		fi
 		git commit -m "$comment"
