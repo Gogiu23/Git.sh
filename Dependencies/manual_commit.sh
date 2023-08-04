@@ -22,6 +22,7 @@ function manual_commit() {
 
 		if [[ "$answer" == "diff" ]]; then
 			git diff >> $traces
+			git diff
 			echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}" 
 			read answer
 		elif [[ "$answer" == "no" ]]; then
