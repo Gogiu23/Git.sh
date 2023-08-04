@@ -27,8 +27,6 @@ welcome
 
 # Bucle para recorrer las carpetas
 for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
-	if [[ -d "$dir" ]]; then
-		if [[ -r "$dir" ]] && [[ -x "$dir" ]]; then
 			# Entrar al directorio del repositorio de Git
 			pushd "$dir/.." > /dev/null
 
@@ -38,12 +36,6 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 
 	# Regresar al directorio anterior
 	popd > /dev/null
-else
-	echo -e "${RED}You don't have permission to get inside $dir\n${NC}"
-		fi
-	else
-		echo -ne "${GREEN}The $dir doesn't exist${NC}" > /dev/null
-	fi
 done
 
 clear
