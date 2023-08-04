@@ -48,4 +48,4 @@ done
 
 clear
 
-echo -e "${YELLOW}Everithing done!! Bye bye!!"
+echo -e "${YELLOW}Everything done!! Bye bye!!"
