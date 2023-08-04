@@ -11,5 +11,6 @@ welcome() {
 		echo -e "${BLUE}[2]. ${RED}Manually"
 		echo -e "check for every change before commit\n${NC}"
 		read starting
+		clear
 	done
 }

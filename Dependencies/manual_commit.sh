@@ -4,7 +4,7 @@
 function manual_commit() {
 	# Comprobar si hay cambios sin hacer commit ni push
 	if [[ -n "$status" ]]; then
-		echo -e "${RED}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
+		echo -e "\n${RED}Hay cambios sin hacer commit ni push en: $(pwd)\n${NC}"
 
 		echo -e "${CYAN}Do you want to stage and push theese unstages changes?\n${NC}"
 
@@ -13,12 +13,12 @@ function manual_commit() {
 		read answer
 
 		if [[ "$counter" == "0" ]]; then
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
 		else
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 		fi
 		echo -e "All the changes manually should be recorded down here" >> $traces
-		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 
 		if [[ "$answer" == "diff" ]]; then
 			git diff >> $traces
@@ -29,9 +29,9 @@ function manual_commit() {
 		fi
 		if [[ "$answer" == "yes" ]]; then
 			echo -e "${CYAN}Making commits...\n${NC}"
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 			git add . >> $traces
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 			echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
 			echo -e "${YELLOW}(Write your comments or type no)${GREEN} " 
 			read comment
@@ -39,11 +39,11 @@ function manual_commit() {
 				comment=$(date)
 				echo "$comment"
 			fi
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 			git commit -m "$comment" >> $traces
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 			git push >> $traces
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 			echo -e "${NC}"
 			fi
 		fi

@@ -5,9 +5,12 @@
 function check_git_status() {
 	# Obtener el estado del repositorio de Git
 	status=$(git status --porcelain)
-	if [[ "$starting" == "2" ]]; then
+	remote=$(git remote)
+	if [[ "$starting" == "2" ]] && [[ "$remote" ]]; then
 		manual_commit
-	else
+	elif [[ "$starting" == "1" ]]; then
 		automatic_commit
+	else
+		return "0"
 	fi
 }
