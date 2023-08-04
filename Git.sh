@@ -35,7 +35,7 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 			check_git_status
 
 	# Regresar al directorio anterior
-	popd > /dev/null
+	popd > /dev/null 2>/dev/null
 done
 
 clear
