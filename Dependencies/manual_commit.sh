@@ -12,7 +12,7 @@ function manual_commit() {
 
 		read answer
 
-		if [[ "$counter" > "0" ]]; then
+		if [[ "$counter" == "0" ]]; then
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
 		else
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces

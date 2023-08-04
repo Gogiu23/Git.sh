@@ -23,7 +23,6 @@ source Dependencies/automatic_commit.sh
 source Dependencies/log.sh
 
 welcome
-#exit
 
 counter=0
 
@@ -33,7 +32,6 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 		if [[ -r "$dir" ]] && [[ -x "$dir" ]]; then
    		# Entrar al directorio del repositorio de Git
    		pushd "$dir/.." > /dev/null
-#		clear
 
    	# Verificar el estado del repositorio
    	check_git_status
