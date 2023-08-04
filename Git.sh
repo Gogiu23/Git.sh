@@ -47,4 +47,6 @@ else
 	fi
 done
 
+clear
+
 echo -e "${YELLOW}Everithing done!! Bye bye!!"
