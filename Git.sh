@@ -28,7 +28,7 @@ welcome
 # Bucle para recorrer las carpetas
 for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
 			# Entrar al directorio del repositorio de Git
-			pushd "$dir/.." > /dev/null
+			pushd "$dir/.." > /dev/null 2>/dev/null
 
 			counter=0
 			# Verificar el estado del repositorio
