@@ -31,7 +31,6 @@ for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/de
 		if [[ -r "$dir" ]] && [[ -x "$dir" ]]; then
 			# Entrar al directorio del repositorio de Git
 			pushd "$dir/.." > /dev/null
-			echo -n "🟩"
 
 			counter=0
 			# Verificar el estado del repositorio
