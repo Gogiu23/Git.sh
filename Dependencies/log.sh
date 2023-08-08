@@ -12,18 +12,22 @@ function log() {
 		case $traces in
 			1)
 				traces="$HOME/Desktop/log.txt"
+				touch $traces
 				break
 				;;
 			2)
-				traces="$HOME/Documents/log.txt"
+				traces="$HOME/Documentos/log.txt"
+				touch $traces
 				break
 				;;
 			3)
 				traces="$HOME/Downloads/log.txt"
+				touch $traces
 				break
 				;;
 			4)
 				traces="$PWD/log.txt"
+				touch $traces
 				break
 				;;
 		esac

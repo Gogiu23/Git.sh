@@ -3,6 +3,10 @@
 welcome() {
 	echo -e "Welcome at your Personal Git manager\n"
 	echo -e "Every action will be register in a file named log.txt"
+#	if [[ "$install" != "yes" ]]; then
+#		read -p "Would you like to install the programm in your computer?" install
+#	fi
+
 	log
 	echo -e "how would you like to proceed?\n"
 	while [[ "$starting" != "1" && "$starting" != "2" ]]; do

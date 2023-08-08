@@ -16,11 +16,11 @@ UNDERLINE='\033[4m'
 BLINK='\033[5m'
 INVERT='\033[7m'
 
-source Dependencies/welcome.sh
-source Dependencies/check_git_status.sh
-source Dependencies/manual_commit.sh
-source Dependencies/automatic_commit.sh
-source Dependencies/log.sh
+source $HOME/Escritorio/Git.sh/Dependencies/welcome.sh
+source $HOME/Escritorio/Git.sh/Dependencies/check_git_status.sh
+source $HOME/Escritorio/Git.sh/Dependencies/manual_commit.sh
+source $HOME/Escritorio/Git.sh/Dependencies/automatic_commit.sh
+source $HOME/Escritorio/Git.sh/Dependencies/log.sh
 
 welcome
 
