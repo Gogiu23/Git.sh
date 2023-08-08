@@ -16,7 +16,7 @@ function log() {
 				break
 				;;
 			2)
-				traces="$HOME/Documentos/log.txt"
+				traces="$HOME/Documents/log.txt"
 				touch $traces
 				break
 				;;
