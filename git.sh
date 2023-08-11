@@ -1,26 +1,12 @@
 #!/bin/bash
 
-#COLORES
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
-MAGENTA='\033[0;35m'
-CYAN='\033[0;36m'
-WHITE='\033[0;37m'
-NC='\033[0m' # No Color
-
-# Estilos
-BOLD='\033[1m'
-UNDERLINE='\033[4m'
-BLINK='\033[5m'
-INVERT='\033[7m'
-
-source $HOME/Desktop/Git.sh/Dependencies/welcome.sh
-source $HOME/Desktop/Git.sh/Dependencies/check_git_status.sh
-source $HOME/Desktop/Git.sh/Dependencies/manual_commit.sh
-source $HOME/Desktop/Git.sh/Dependencies/automatic_commit.sh
-source $HOME/Desktop/Git.sh/Dependencies/log.sh
+source $HOME/Escritorio/Git.sh/Dependencies/welcome.sh
+source $HOME/Escritorio/Git.sh/Dependencies/check_git_status.sh
+source $HOME/Escritorio/Git.sh/Dependencies/manual_commit.sh
+source $HOME/Escritorio/Git.sh/Dependencies/automatic_commit.sh
+source $HOME/Escritorio/Git.sh/Dependencies/log.sh
+source $HOME/Escritorio/Git.sh/Dependencies/commits.sh
+source $HOME/Escritorio/Git.sh/Dependencies/Colores.sh
 
 welcome
 
