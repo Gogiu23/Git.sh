@@ -11,20 +11,4 @@ source $HOME/Escritorio/Git.sh/Dependencies/Pull.sh
 
 welcome
 
-
-# Bucle para recorrer las carpetas
-function find_git() {
-	for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
-		# Entrar al directorio del repositorio de Git
-		pushd "$dir/.." > /dev/null 2>/dev/null
-
-		counter=0
-		# Verificar el estado del repositorio
-		check_git_status
-
-	# Regresar al directorio anterior
-	popd > /dev/null 2>/dev/null
-done
-}
-
 echo -e "${YELLOW}Everything done!! Bye bye!!"

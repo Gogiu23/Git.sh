@@ -13,6 +13,7 @@ function commit() {
 }
 
 function find_git() {
+		echo "$init"
 	for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
 		# Entrar al directorio del repositorio de Git
 		pushd "$dir/.." > /dev/null 2>/dev/null
