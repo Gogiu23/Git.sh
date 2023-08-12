@@ -32,4 +32,5 @@ function log() {
 				;;
 		esac
 	done
+	find_git
 }
