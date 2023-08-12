@@ -9,13 +9,7 @@ function commit() {
 		echo -e "check for every change before commit\n${NC}"
 		read starting
 	done
-	if [[ "$starting" == "2" ]] && [[ "$remote" ]]; then
-		manual_commit
-	elif [[ "$starting" == "1" ]]; then
-		automatic_commit
-	else
-		return "0"
-	fi
+	find_git
 }
 
 function find_git() {
