@@ -7,7 +7,7 @@ function commit() {
 		echo -e "Everything will be Automathic\n"
 		echo -e "${BLUE}[2]. ${RED}Manually"
 		echo -e "check for every change manually\n${NC}"
-		read starting
+		read -sn 1 starting
 	done
 	find_git
 }
