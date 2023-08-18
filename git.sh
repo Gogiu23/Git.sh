@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 dependency="$HOME/.config/git_sh"
 
 if [[ -d "$dependency" ]]; then
@@ -42,15 +43,16 @@ else
 		echo -e "Error, the directory couldn't be created"
 	fi
 fi
+clear
 
 source $dependency/Dependencies/welcome.sh
+source $dependency/Dependencies/Pull.sh
 source $dependency/Dependencies/check_git_status.sh
 source $dependency/Dependencies/manual_commit.sh
 source $dependency/Dependencies/automatic_commit.sh
 source $dependency/Dependencies/log.sh
 source $dependency/Dependencies/commits.sh
 source $dependency/Dependencies/Colores.sh
-source $dependency/Dependencies/Pull.sh
 
 welcome
 

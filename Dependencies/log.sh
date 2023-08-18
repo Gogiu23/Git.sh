@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#if [[ "$OSTYPE" = darwin* ]]; then
-#	echo "estoy en darwin"
-#else
-#	echo "no estas aqui"
-#fi
-#exit
-
 function log() {
 	while true; do
 		echo -e "Choose where would you like to save the file log.txt"
