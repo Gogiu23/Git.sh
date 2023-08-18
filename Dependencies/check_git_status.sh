@@ -9,7 +9,7 @@ function check_git_status() {
 	if [[ "$starting" == "2" ]] && [[ "$remote" ]]; then
 		manual_commit
 	else
-		echo -e "\n${MAGENTA}${BOLD}${UNDERLINE}${PWD}${NC}"
+		echo -e "${MAGENTA}${BOLD}${UNDERLINE}${PWD}${NC}"
 		automatic_commit
 	fi
 }

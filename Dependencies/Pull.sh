@@ -35,7 +35,7 @@ function mang_pull() {
 		echo -e "${RED}Would you like to pull?${NC}"
 		echo -n "[yes]"
 		echo -e "\t\t\t[no]"
-		read answer
+		read -sn 1 answer
 		if [[ "$answer" == "yes" ]]; then
 			git pull
 		fi
@@ -43,7 +43,7 @@ function mang_pull() {
 	# Regresar al directorio anterior
 	popd > /dev/null 2>/dev/null
 done
-read dir_pull
+read -sn 1 dir_pull
 #		case $traces in
 #			1)
 #				if [[ "$OSTYPE" = darwin* ]]; then

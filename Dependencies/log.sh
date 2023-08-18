@@ -3,11 +3,11 @@
 function log() {
 	while true; do
 		echo -e "Choose where would you like to save the file log.txt"
-		echo -ne "[1] Desktop"
-		echo -e "\t\t\t[2] Documents"
-		echo -ne "[3] Downloads"
-		echo -e "\t\t\t[4] The actual PWD you are"
-		read traces
+		echo -ne "${CYAN}${BOLD}[1] Desktop"
+		echo -e "\t\t\t${YELLOW}${BOLD}[2] Documents"
+		echo -ne "${RED}${BOLD}[3] Downloads"
+		echo -e "\t\t\t${MAGENTA}${BOLD}[4] The actual PWD you are${NC}"
+		read -sn 1 traces
 
 		case $traces in
 			1)
