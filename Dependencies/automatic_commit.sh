@@ -2,7 +2,7 @@
 
 function automatic_commit() {
 	comment=$(date)
-	echo -ne "\n${RED}${BOLD}Proceeding with automatic_commit.${GREEN}"
+	echo -ne "\n${RED}${BOLD}Proceeding with automatic_commit.${GREEN}${BOLD}"
 	if [[ -n "$status" ]]; then
 		if [[ "$counter" == "0" ]]; then
 
@@ -23,6 +23,7 @@ function automatic_commit() {
 		git commit -m "$comment" >> $traces
 		echo -e "\n" >> $traces
 		git push >> $traces
+		echo -e
 		echo -e "=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 	fi
 	((counter++))
