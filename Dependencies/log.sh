@@ -2,7 +2,7 @@
 
 function log() {
 	while true; do
-		echo -e "Choose where would you like to save the file log.txt"
+		echo -e "${BOLD}Choose where would you like to save the file log.txt"
 		echo -ne "${CYAN}${BOLD}[1] Desktop"
 		echo -e "\t\t\t${YELLOW}${BOLD}[2] Documents"
 		echo -ne "${RED}${BOLD}[3] Downloads"

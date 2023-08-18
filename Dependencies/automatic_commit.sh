@@ -2,7 +2,7 @@
 
 function automatic_commit() {
 	comment=$(date)
-	echo -ne "\n${RED}Proceeding with automatic_commit.${GREEN}"
+	echo -ne "\n${RED}${BOLD}Proceeding with automatic_commit.${GREEN}"
 	if [[ -n "$status" ]]; then
 		if [[ "$counter" == "0" ]]; then
 

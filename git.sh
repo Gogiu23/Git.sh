@@ -56,4 +56,4 @@ source $dependency/Dependencies/Colores.sh
 
 welcome
 
-echo -e "${YELLOW}Everything done!! Bye bye!!"
+echo -e "\n${YELLOW}${BOLD}Everything done!! Bye bye!!"

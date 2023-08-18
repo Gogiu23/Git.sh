@@ -1,12 +1,12 @@
 #!/bin/bash
 
 function commit() {
-	echo -e "how would you like to proceed?\n"
+	echo -e "\n${BOLD}How would you like to proceed?"
 	while [[ "$starting" != "1" && "$starting" != "2" ]]; do
-		echo -e "${BLUE}[1]. ${CYAN}Automathic"
-		echo -e "Everything will be Automathic\n"
-		echo -e "${BLUE}[2]. ${RED}Manually"
-		echo -e "check for every change manually\n${NC}"
+		echo -e "${BLUE}${BOLD}[1]. ${CYAN}${BOLD}Automathic"
+		echo -e "${BOLD}Everything will be Automathic\n"
+		echo -e "${BLUE}${BOLD}[2]. ${RED}${BOLD}Manually"
+		echo -e "${BOLD}check for every change manually\n${NC}"
 		read -sn 1 starting
 	done
 	find_git
