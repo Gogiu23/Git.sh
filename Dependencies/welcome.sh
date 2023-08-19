@@ -25,6 +25,6 @@ function welcome() {
 	elif [[ "$init" == "1" ]]; then
 		pull
 	else
-		return
+		exit_script
 	fi
 }

@@ -7,42 +7,42 @@ function log() {
 		echo -e "\t\t\t${YELLOW}${BOLD}[2] Documents"
 		echo -ne "${RED}${BOLD}[3] Downloads"
 		echo -e "\t\t\t${MAGENTA}${BOLD}[4] The actual PWD you are${NC}"
-		read -sn 1 traces
+		read -sn 1 log
 
-		case $traces in
+		case $log in
 			1)
 				if [[ "$OSTYPE" = darwin* ]]; then
-					traces="$HOME/Desktop/log.txt"
-					touch $traces
+					log="$HOME/Desktop/log.txt"
+					touch $log
 				else
-					traces="$HOME/Escritorio/log.txt"
-					touch $traces
+					log="$HOME/Escritorio/log.txt"
+					touch $log
 				fi
 				break
 				;;
 			2)
 				if [[ "$OSTYPE" = darwin* ]]; then
-					traces="$HOME/Documents/log.txt"
-					touch $traces
+					log="$HOME/Documents/log.txt"
+					touch $log
 				else
-					traces="$HOME/Documentos/log.txt"
-					touch $traces
+					log="$HOME/Documentos/log.txt"
+					touch $log
 				fi
 				break
 				;;
 			3)
 				if [[ "$OSTYPE" = darwin* ]]; then
-					traces="$HOME/Downloads/log.txt"
-					touch $traces
+					log="$HOME/Downloads/log.txt"
+					touch $log
 				else
-					traces="$HOME/Descargas/log.txt"
-					touch $traces
+					log="$HOME/Descargas/log.txt"
+					touch $log
 				fi
 				break
 				;;
 			4)
-				traces="$PWD/log.txt"
-				touch $traces
+				log="$PWD/log.txt"
+				touch $log
 				break
 				;;
 		esac

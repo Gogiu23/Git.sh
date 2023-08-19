@@ -9,11 +9,58 @@ function commit() {
 		echo -e "${BOLD}check for every change manually\n${NC}"
 		read -sn 1 starting
 	done
+
+	while true; do
+	echo -e "\n${CYAN}${BOLD}Choose wich directory would you like to pull${NC}"
+	echo -ne "${RED}${BOLD}[1] /${NC}"
+	echo -e "\t\t\t${YELLOW}${BOLD}[2] HOME${NC}"
+	echo -ne "${GREEN}${BOLD}[3] Desktop${NC}"
+	echo -e "\t\t${MAGENTA}${BOLD}[4] Local diretory${NC}"
+	read -sn 1 traces
+		case $traces in
+			1)
+				if [[ "$OSTYPE" = darwin* ]]; then
+					traces="/"
+					echo -e "${YELLOW}${BOLD}Entering in $traces"
+				else
+					traces="/"
+					echo -e "${YELLOW}${BOLD}Entering in $traces"
+				fi
+				break
+				;;
+   	2)
+				if [[ "$OSTYPE" = darwin* ]]; then
+					traces="$HOME"
+					echo -e "${YELLOW}${BOLD}Entering in $traces"
+				else
+					traces="$HOME"
+					echo -e "${YELLOW}${BOLD}Entering in $traces"
+				fi
+				break
+				;;
+   	3)
+				if [[ "$OSTYPE" = darwin* ]]; then
+					traces="$HOME/Desktop"
+					echo -e "${YELLOW}${BOLD}Entering in $traces"
+				else
+					traces="$HOME/Escritorio"
+					echo -e "${YELLOW}${BOLD}Entering in $traces"
+				fi
+				break
+				;;
+   	4)
+				traces="$PWD"
+				echo -e "${YELLOW}${BOLD}Entering in $traces"
+				break
+				;;
+		esac
+	done
+	clear
 	find_git
 }
 
 function find_git() {
-	for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
+	for dir in $(find "$traces" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
 
 		# Entrar al directorio del repositorio de Git
 		pushd "$dir/.." > /dev/null 2>/dev/null

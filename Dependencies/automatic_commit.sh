@@ -6,27 +6,27 @@ function automatic_commit() {
 	if [[ -n "$status" ]]; then
 		if [[ "$counter" == "0" ]]; then
 
-			echo -e "=-==-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+			echo -e "=-==-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=" > $log
 		else
-			echo -e "=-==-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 		fi
 
-		echo -e "Here the direction you are making changes\n" >> $traces
-		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "Here the direction you are making changes\n" >> $log
+		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 
-		echo -e "$PWD\n" >> $traces
-		git diff >> $traces
-		echo -e >> $traces
-		git add . >> $traces
-		echo -e >> $traces
-		git commit -m "$comment" >> $traces
-		echo -e "\n" >> $traces
-		git push >> $traces
+		echo -e "$PWD\n" >> $log
+		git diff >> $log
+		echo -e >> $log
+		git add . >> $log
+		echo -e >> $log
+		git commit -m "$comment" >> $log
+		echo -e "\n" >> $log
+		git push >> $log
 		echo -e
-		echo -e "=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 	fi
 	((counter++))
-	sleep 0.1
+	sleep 1
 	clear
 	welcome
 }
