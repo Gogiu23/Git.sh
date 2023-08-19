@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 dependency="$HOME/.config/git_sh"
 
 if [[ -d "$dependency" ]]; then
