@@ -19,6 +19,7 @@ function commit() {
 	echo -ne "${GREEN}${BOLD}[3] Desktop${NC}"
 	echo -e "\t\t${MAGENTA}${BOLD}[4] Local diretory${NC}"
 	read -sn 1 traces
+	clear
 		case $traces in
 			1)
 				if [[ "$OSTYPE" = darwin* ]]; then
@@ -57,7 +58,6 @@ function commit() {
 				;;
 		esac
 	done
-	# clear
 	find_git
 }
 
