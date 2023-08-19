@@ -74,5 +74,6 @@ function find_git() {
 	# Regresar al directorio anterior
 	popd > /dev/null 2>/dev/null
 done
+clear
 welcome
 }
