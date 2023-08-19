@@ -49,4 +49,7 @@ function manual_commit() {
 			fi
 		fi
 		((counter++))
+
+		clear
+		welcome
 	}

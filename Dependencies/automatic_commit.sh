@@ -14,7 +14,6 @@ function automatic_commit() {
 		echo -e "Here the direction you are making changes\n" >> $traces
 		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 
-	#	echo -e "\n$PWD"
 		echo -e "$PWD\n" >> $traces
 		git diff >> $traces
 		echo -e >> $traces
@@ -27,4 +26,6 @@ function automatic_commit() {
 		echo -e "=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
 	fi
 	((counter++))
+	clear
+	welcome
 }

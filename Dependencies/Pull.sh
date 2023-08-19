@@ -11,14 +11,13 @@ function pull() {
 		read -sn 1 pull_answer
 	done
 	if [[ "$pull_answer" == "1" ]]; then
-		mang_pull
+		auto_pull
 	else
 		manual_pull
 	fi
-	#for dir in $(find "$HOME" -ignore_readdir_race -type d -name '.git' -prune 2>/dev/null); do
 }
 
-function mang_pull() {
+function auto_pull() {
 	while true; do
 	echo -e "\n${CYAN}${BOLD}Choose wich directory would you like to pull${NC}"
 	echo -ne "${RED}${BOLD}[1] /${NC}"
@@ -77,6 +76,8 @@ function mang_pull() {
 		git pull
 		popd > /dev/null 2>/dev/null
 	done
+	clear
+	welcome
 }
 
 function manual_pull(){
@@ -150,4 +151,6 @@ function manual_pull(){
 	# Regresar al directorio anterior
 	popd > /dev/null 2>/dev/null
 done
+clear
+welcome
 }

@@ -17,12 +17,14 @@ function welcome() {
 	echo -e "Every action will be register in a file named log.txt\n"
 	echo -e "${BOLD}${CYAN}Would you like to pull or push?\n${NC}"
 	echo -ne "${GREEN}${BOLD}[1] Pull"
-	echo -e "\t\t\t[2] Push\n${NC}"
+	echo -ne "\t\t[2] Push"
+	echo -e "\t\t[3] Exit"
 	read -sn 1 init
 	if [[ "$init" == "2" ]]; then
 		log
-	else
+	elif [[ "$init" == "1" ]]; then
 		pull
+	else
+		return
 	fi
-
 }
