@@ -13,7 +13,7 @@ function commit() {
 
 	clear
 	while true; do
-	echo -e "\n${CYAN}${BOLD}Choose wich directory would you like to pull${NC}"
+	echo -e "\n${CYAN}${BOLD}Choose wich directory would you like to push${NC}"
 	echo -ne "${RED}${BOLD}[1] /${NC}"
 	echo -e "\t\t\t${YELLOW}${BOLD}[2] HOME${NC}"
 	echo -ne "${GREEN}${BOLD}[3] Desktop${NC}"
@@ -74,5 +74,5 @@ function find_git() {
 	# Regresar al directorio anterior
 	popd > /dev/null 2>/dev/null
 done
-# welcome
+welcome
 }
