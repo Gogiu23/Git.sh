@@ -8,31 +8,35 @@ function manual_commit() {
 
 		echo -e "${CYAN}Do you want to stage and push theese unstages changes?\n${NC}"
 
-		echo -e "${YELLOW}(type ${BOLD}${RED}yes${NC}${YELLOW} or ${BOLD}${RED}no${NC}${YELLOW} or ${BOLD}${RED}diff${NC}${YELLOW} in case you wanna know the diffs)${MAGENTA} "
+		echo -e "${YELLOW}(type ${BOLD}${RED}\n[y] yes${NC}\n${RED}${BOLD}[n] no\n[d] diff${NC}\n${YELLOW} in case you wanna know the diffs)${MAGENTA} "
 
-		read answer
+		read -sn 1 answer
 
 		if [[ "$counter" == "0" ]]; then
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" > $log
 		else
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 		fi
-		echo -e "All the changes manually should be recorded down here" >> $traces
-		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+		echo -e "All the changes manually should be recorded down here" >> $log
+		echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 
-		if [[ "$answer" == "diff" ]]; then
-			git diff >> $traces
+		if [[ "$answer" == "d" ]]; then
+
+			git diff >> $log
 			git diff
-			echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}" 
-			read answer
-		elif [[ "$answer" == "no" ]]; then
+			echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}${BOLD}" 
+			echo -e "[y] yes"
+			echo -e "[n] no"
+			read -sn 1 answer
+
+		elif [[ "$answer" == "n" ]]; then
 			return 1
 		fi
-		if [[ "$answer" == "yes" ]]; then
+		if [[ "$answer" == "y" ]]; then
 			echo -e "${CYAN}Making commits...\n${NC}"
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
-			git add . >> $traces
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
+			git add . >> $log
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 			echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
 			echo -e "${YELLOW}(Write your comments or type no)${GREEN} " 
 			read comment
@@ -40,16 +44,17 @@ function manual_commit() {
 				comment=$(date)
 				echo "$comment"
 			fi
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
-			git commit -m "$comment" >> $traces
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
-			git push >> $traces
-			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $traces
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
+			git commit -m "$comment" >> $log
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
+			git push >> $log
+			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 			echo -e "${NC}"
 			fi
 		fi
 		((counter++))
 
+		sleep 1.5
 		clear
 		welcome
 	}

@@ -10,6 +10,7 @@ function commit() {
 		read -sn 1 starting
 	done
 
+	clear
 	while true; do
 	echo -e "\n${CYAN}${BOLD}Choose wich directory would you like to pull${NC}"
 	echo -ne "${RED}${BOLD}[1] /${NC}"
