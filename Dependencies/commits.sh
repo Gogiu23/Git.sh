@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function commit() {
+	clear
 	echo -e "\n${BOLD}How would you like to proceed?"
 	while [[ "$starting" != "1" && "$starting" != "2" ]]; do
 		echo -e "${BLUE}${BOLD}[1]. ${CYAN}${BOLD}Automathic"
@@ -56,7 +57,7 @@ function commit() {
 				;;
 		esac
 	done
-	clear
+	# clear
 	find_git
 }
 
@@ -73,4 +74,5 @@ function find_git() {
 	# Regresar al directorio anterior
 	popd > /dev/null 2>/dev/null
 done
+# welcome
 }

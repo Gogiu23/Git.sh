@@ -8,8 +8,9 @@ function check_git_status() {
 	remote=$(git remote)
 	if [[ "$starting" == "2" ]] && [[ "$remote" ]]; then
 		manual_commit
-	else
+	elif [[ "$starting" == "1" ]]; then
 		echo -e "${MAGENTA}${BOLD}${UNDERLINE}${PWD}${NC}"
+		exit
 		automatic_commit
 	fi
 }

@@ -22,7 +22,6 @@ function manual_commit() {
 
 		if [[ "$answer" == "d" ]]; then
 
-			git diff >> $log
 			git diff
 			echo -e "${YELLOW}Still wanna stage and push? (yes or no) ${MAGENTA}${BOLD}" 
 			echo -e "[y] yes"
@@ -33,6 +32,8 @@ function manual_commit() {
 			return 1
 		fi
 		if [[ "$answer" == "y" ]]; then
+
+			git diff >> $log
 			echo -e "${CYAN}Making commits...\n${NC}"
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 			git add . >> $log
@@ -40,9 +41,12 @@ function manual_commit() {
 			echo -e "${CYAN}Wanna add something as commentary to your commit? (if not the date would be print instead)\n${NC}" 
 			echo -e "${YELLOW}(Write your comments or type no)${GREEN} " 
 			read comment
+
 			if [[ !"$comment" ]]; then
+
 				comment=$(date)
 				echo "$comment"
+
 			fi
 			echo -e "=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 			git commit -m "$comment" >> $log
@@ -54,7 +58,8 @@ function manual_commit() {
 		fi
 		((counter++))
 
-		sleep 1.5
-		clear
-		welcome
+		# sleep 1.5
+		# exit
+		# clear
+		# welcome
 	}
