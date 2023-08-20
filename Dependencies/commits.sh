@@ -59,6 +59,8 @@ function commit() {
 		esac
 	done
 	find_git
+	clear
+	welcome
 }
 
 function find_git() {
