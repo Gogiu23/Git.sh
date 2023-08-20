@@ -60,6 +60,7 @@ function commit() {
 	done
 	find_git
 
+	clear
 	echo -ne "\t\t\t\t\t\t${GREEN}${BOLD}Nothing "
 	echo -ne "${CYAN}${BOLD}to "
 	echo -ne "${BLUE}${BOLD}be "

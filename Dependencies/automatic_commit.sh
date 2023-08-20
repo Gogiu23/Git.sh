@@ -26,7 +26,7 @@ function automatic_commit() {
 		echo -e "=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 	fi
 	((counter++))
-	sleep 1
-	clear
-	welcome
+	# sleep 1
+	# clear
+	# welcome
 }

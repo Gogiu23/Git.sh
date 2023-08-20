@@ -10,8 +10,6 @@ function check_git_status() {
 		manual_commit
 	elif [[ "$starting" == "1" ]]; then
 		echo -e "${MAGENTA}${BOLD}${UNDERLINE}${PWD}${NC}"
-		echo "saliendo"
-		exit
 		automatic_commit
 	fi
 }
