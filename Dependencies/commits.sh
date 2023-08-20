@@ -59,6 +59,14 @@ function commit() {
 		esac
 	done
 	find_git
+
+	echo -ne "\t\t\t\t\t\t${GREEN}${BOLD}Nothing "
+	echo -ne "${CYAN}${BOLD}to "
+	echo -ne "${BLUE}${BOLD}be "
+	echo -ne "${MAGENTA}${BOLD}done. "
+	echo -ne "${YELLOW}${BOLD}Back "
+	echo -ne "${RED}${BOLD}to begin. "
+	sleep 2
 	clear
 	welcome
 }
