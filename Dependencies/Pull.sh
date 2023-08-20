@@ -74,8 +74,8 @@ function auto_pull() {
 		echo -e ${NC}${CYAN}${BOLD}
 		git remote update
 		git pull
-		popd > /dev/null 2>/dev/null
-	done
+	popd > /dev/null 2>/dev/null
+done
 	clear
 	welcome
 }
