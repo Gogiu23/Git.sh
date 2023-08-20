@@ -29,7 +29,7 @@ function manual_commit() {
 			read -sn 1 answer
 
 		elif [[ "$answer" == "n" ]]; then
-			return
+			return 1
 		fi
 		if [[ "$answer" == "y" ]]; then
 
