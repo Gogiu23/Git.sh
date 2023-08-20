@@ -61,6 +61,22 @@ function commit() {
 	find_git
 
 	clear
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
+	echo -e
 	echo -ne "\t\t\t\t\t\t${GREEN}${BOLD}Nothing "
 	echo -ne "${CYAN}${BOLD}to "
 	echo -ne "${BLUE}${BOLD}be "

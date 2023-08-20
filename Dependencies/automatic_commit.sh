@@ -2,7 +2,7 @@
 
 function automatic_commit() {
 	comment=$(date)
-	echo -ne "\n${RED}${BOLD}Proceeding with automatic_commit.${GREEN}${BOLD}"
+	echo -e "\n${RED}${BOLD}Proceeding with automatic_commit.${GREEN}${BOLD}"
 	if [[ -n "$status" ]]; then
 		if [[ "$counter" == "0" ]]; then
 
@@ -26,7 +26,4 @@ function automatic_commit() {
 		echo -e "=-==-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=" >> $log
 	fi
 	((counter++))
-	# sleep 1
-	# clear
-	# welcome
 }
