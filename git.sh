@@ -43,28 +43,28 @@ else
 	fi
 fi
 
-nuevo_directorio="$HOME/.localbin/"
-oldDirectory=$(grep "^export PATH" ~/.zshrc)
-echo $oldDirectory
+#nuevo_directorio="$HOME/.localbin/"
+#oldDirectory=$(grep "^export PATH" ~/.zshrc)
+#echo $oldDirectory
 
-# Verifica si el directorio ya está en el PATH
-if [[ ":$PATH:" != *":$nuevo_directorio:"* ]]; then
-    # Agrega el directorio al PATH en el archivo ~/.zshrc
-	sed -i "\~$oldDirectory~d" ~/.zshrc
-	exit
-    echo 'export PATH="$PATH:'"$nuevo_directorio"'"' >> ~/.zshrc
+## Verifica si el directorio ya está en el PATH
+#if [[ ":$PATH:" != *":$nuevo_directorio:"* ]]; then
+    ## Agrega el directorio al PATH en el archivo ~/.zshrc
+	#sed -i "\~$oldDirectory~d" ~/.zshrc
+	#exit
+    #echo 'export PATH="$PATH:'"$nuevo_directorio"'"' >> ~/.zshrc
 
-    # Aplica los cambios en la sesión actual
-    source ~/.zshrc
+    ## Aplica los cambios en la sesión actual
+    #source ~/.zshrc
 
-    echo "Directorio $nuevo_directorio agregado al PATH."
-else
-    echo "El directorio $nuevo_directorio ya está en el PATH."
-fi
+    #echo "Directorio $nuevo_directorio agregado al PATH."
+#else
+    #echo "El directorio $nuevo_directorio ya está en el PATH."
+#fi
 
-exit
+#exit
 
-clear
+#clear
 
 source $dependency/Dependencies/welcome.sh
 source $dependency/Dependencies/Pull.sh
